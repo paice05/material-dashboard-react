@@ -3,8 +3,8 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from "../../components/MDBox";
+import MDTypography from "../../components/MDTypography";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -14,7 +14,7 @@ import DataTable from "examples/Tables/DataTable";
 
 // Data
 import authorsTableData from "layouts/tables/data/authorsTableData";
-import MDButton from "components/MDButton";
+import MDButton from "../../components/MDButton";
 import { NavLink } from "react-router-dom";
 
 export const ListUser = () => {
