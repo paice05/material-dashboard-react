@@ -47,8 +47,26 @@ import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import { ListUser } from "layouts/users/List";
+import { FormUser } from "layouts/users/Form";
 
 const routes = [
+  {
+    type: "collapse",
+    name: "Usuário",
+    key: "user",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/users",
+    component: <ListUser />,
+  },
+  {
+    type: "route",
+    name: "Usuário",
+    key: "user-form",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/user",
+    component: <FormUser />,
+  },
   {
     type: "collapse",
     name: "Dashboard",

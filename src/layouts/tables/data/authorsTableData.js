@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+import { useState } from "react";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -25,8 +26,14 @@ import MDBadge from "components/MDBadge";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import { Icon, Menu, MenuItem } from "@mui/material";
 
 export default function data() {
+  const [menu, setMenu] = useState(null);
+
+  const openMenu = ({ currentTarget }) => setMenu(currentTarget);
+  const closeMenu = () => setMenu(null);
+
   const Author = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar src={image} name={name} size="sm" />
@@ -46,6 +53,27 @@ export default function data() {
       </MDTypography>
       <MDTypography variant="caption">{description}</MDTypography>
     </MDBox>
+  );
+
+  const renderMenu = (
+    <Menu
+      id="simple-menu"
+      anchorEl={menu}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "left",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={Boolean(menu)}
+      onClose={closeMenu}
+    >
+      <MenuItem onClick={closeMenu}>Action</MenuItem>
+      <MenuItem onClick={closeMenu}>Another action</MenuItem>
+      <MenuItem onClick={closeMenu}>Something else</MenuItem>
+    </Menu>
   );
 
   return {
@@ -72,9 +100,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
       {
@@ -91,9 +126,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
       {
@@ -110,9 +152,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
       {
@@ -129,9 +178,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
       {
@@ -148,9 +204,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
       {
@@ -167,9 +230,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
+          <MDBox ml={-1}>
+            <Icon
+              sx={{ cursor: "pointer", fontWeight: "bold" }}
+              fontSize="small"
+              onClick={openMenu}
+            >
+              more_vert
+            </Icon>
+            {renderMenu}
+          </MDBox>
         ),
       },
     ],
