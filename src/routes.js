@@ -44,17 +44,17 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import { FormUser, ListUser } from "./layouts/users";
+import { ListAccount, FormAccount } from "./layouts/accounts/index";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
-import { ListUser } from "layouts/users/List";
-import { FormUser } from "layouts/users/Form";
 
 const routes = [
   {
     type: "collapse",
-    name: "Usuário",
-    key: "user",
+    name: "Usuários",
+    key: "users",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/users",
     component: <ListUser />,
@@ -62,11 +62,28 @@ const routes = [
   {
     type: "route",
     name: "Usuário",
-    key: "user-form",
+    key: "user",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/user",
     component: <FormUser />,
   },
+  {
+    type: "collapse",
+    name: "Contas",
+    key: "accounts",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/accounts",
+    component: <ListAccount />,
+  },
+  {
+    type: "route",
+    name: "Conta",
+    key: "account",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/account",
+    component: <FormAccount />,
+  },
+
   {
     type: "collapse",
     name: "Dashboard",
