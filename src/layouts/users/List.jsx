@@ -16,9 +16,13 @@ import DataTable from "../../examples/Tables/DataTable";
 
 // Data
 import authorsTableData from "../tables/data/authorsTableData";
+import { useMaterialUIController } from "../../context";
 
 export const ListUser = () => {
   const { columns, rows } = authorsTableData();
+
+  const [controller] = useMaterialUIController();
+  const { sidenavColor } = controller;
 
   return (
     <DashboardLayout>
@@ -33,9 +37,9 @@ export const ListUser = () => {
                 py={3}
                 px={2}
                 variant="gradient"
-                bgColor="info"
+                bgColor={sidenavColor}
                 borderRadius="lg"
-                coloredShadow="info"
+                coloredShadow={sidenavColor}
                 style={{ display: "flex", justifyContent: "space-between" }}
               >
                 <MDTypography variant="h6" color="white">
